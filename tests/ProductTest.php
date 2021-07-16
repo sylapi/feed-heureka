@@ -8,7 +8,6 @@ use Sylapi\Feeds\Heureka\Feed;
 use Sylapi\Feeds\Heureka\Models\Product;
 use Sylapi\Feeds\Heureka\Models\Shipping;
 use Sylapi\Feeds\Heureka\Models\ProductDetail;
-use Sylapi\Feeds\Parameters;
 
 class ProductTest extends PHPUnitTestCase
 {
