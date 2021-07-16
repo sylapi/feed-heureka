@@ -49,7 +49,7 @@ class Product implements ProductSerializer
 
     /**
      * @Serializer\XmlElement(cdata=false)
-     * @Serializer\XmlList(inline = true, entry = "additional_image_link")
+     * @Serializer\XmlList(inline = true, entry = "IMGURL_ALTERNATIVE")
      */
     private $additionalImageLinks;    
 
@@ -114,11 +114,6 @@ class Product implements ProductSerializer
      * @Serializer\SerializedName("ITEMGROUP_ID")
      */
     private $itemGroupId;
-
-    /**
-     * @Serializer\Exclude
-     */
-    private $customLabels;
     
     /**
      * @Serializer\Type("Sylapi\Feeds\Heureka\Models\Shipping")
@@ -455,101 +450,6 @@ class Product implements ProductSerializer
 
         return $this;
     }
-
-    /**
-     * Get the value of customLabels
-     */ 
-    public function getCustomLabels()
-    {
-        return $this->customLabels;
-    }
-
-    /**
-     * Set the value of customLabels
-     *
-     * @return  self
-     */ 
-    public function setCustomLabels($customLabels)
-    {
-        $this->customLabels = $customLabels;
-
-        return $this;
-    }
-
-    /**
-     * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("custom_label_0")
-     * @Serializer\XmlElement(cdata=false)
-     * @return string
-     */
-    public function getCustomLabel0()
-    {
-        $lables = $this->getCustomLabels();
-        if(!isset($lables[0])) {
-            return null;
-        }
-        return $lables[0];
-    }
-
-    /**
-     * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("custom_label_1")
-     * @Serializer\XmlElement(cdata=false)
-     * @return string
-     */
-    public function getCustomLabel1()
-    {
-        $lables = $this->getCustomLabels();
-        if(!isset($lables[1])) {
-            return null;
-        }
-        return $lables[1];
-    }
-    
-    /**
-     * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("custom_label_2")
-     * @Serializer\XmlElement(cdata=false)
-     * @return string
-     */
-    public function getCustomLabel2()
-    {
-        $lables = $this->getCustomLabels();
-        if(!isset($lables[2])) {
-            return null;
-        }
-        return $lables[2];
-    }
-    
-    /**
-     * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("custom_label_3")
-     * @Serializer\XmlElement(cdata=false)
-     * @return string
-     */
-    public function getCustomLabel3()
-    {
-        $lables = $this->getCustomLabels();
-        if(!isset($lables[3])) {
-            return null;
-        }
-        return $lables[3];
-    }
-    
-    /**
-     * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("custom_label_4")
-     * @Serializer\XmlElement(cdata=false)
-     * @return string
-     */
-    public function getCustomLabel4()
-    {
-        $lables = $this->getCustomLabels();
-        if(!isset($lables[4])) {
-            return null;
-        }
-        return $lables[4];
-    } 
 
     /**
      * Get the value of shipping
