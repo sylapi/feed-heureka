@@ -6,9 +6,22 @@ $feedGenerator->setFeed(new Sylapi\Feeds\Heureka\Feed(
     Sylapi\Feeds\Parameters::create([])
 ));
 
-for($i = 0; $i < 100; $i++) 
-{
-    $product = new \Sylapi\Feeds\Models\Product();
-    $feedGenerator->appendProduct($product);
-}
+$product = new \Sylapi\Feeds\Models\Product();
+//...
+$feedGenerator->appendProduct($product);
+$feedGenerator->appendProduct($product);
+//...
+$feedGenerator->appendProduct($product);
+//...
+$feedGenerator->save();
+echo $feedGenerator->filePath();
 ```
+
+## Commands
+
+| COMMAND | DESCRIPTION |
+| ------ | ------ |
+| composer tests | Testy |
+| composer phpstan |  PHPStan |
+| composer coverage | PHPUnit Coverage |
+| composer coverage-html | PHPUnit Coverage HTML (DIR: ./coverage/) |
