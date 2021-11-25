@@ -183,7 +183,7 @@ class Product implements ProductSerializer
 
     /**
      * @Serializer\VirtualProperty
-     * @Serializer\XmlElement(cdata=false)
+     * @Serializer\XmlElement(cdata=true)
      * @Serializer\SerializedName("PRODUCTNAME")
      * @return string
      */
