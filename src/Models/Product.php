@@ -124,7 +124,7 @@ class Product implements ProductSerializer
     private $shipping;
     
     /**
-     * @Serializer\Type("integer")
+     * @Serializer\Type("string")
      * @Serializer\SerializedName("DELIVERY_DATE")
      */
     private $maxHandlingTime;  
